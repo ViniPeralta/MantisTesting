@@ -1,6 +1,7 @@
 package com.javaseleniumtemplate.tests;
 
 import com.javaseleniumtemplate.bases.TestBase;
+import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.CreateTaskPage;
 import com.javaseleniumtemplate.pages.HomePage;
 import com.javaseleniumtemplate.pages.LoginPage;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreateTaskTest extends TestBase {
     //Objects
-    LoginPage loginPage;
+    LoginFlows loginFlow;
 
     HomePage homePage;
 
@@ -24,7 +25,7 @@ public class CreateTaskTest extends TestBase {
     public void createNewTask() throws InterruptedException {
 
         //Objects instances
-        loginPage = new LoginPage();
+        loginFlow = new LoginFlows();
         homePage = new HomePage();
         taskPage = new CreateTaskPage();
 
@@ -38,10 +39,7 @@ public class CreateTaskTest extends TestBase {
         String description = "Este teste está sendo realizado com base no que foi aprendido nas aulas com a Base2";
 
         //Test
-        loginPage.preenhcerUsuario(username);
-        loginPage.clicarEmEntrarUsuario();
-        loginPage.preencherSenha(password);
-        loginPage.clicarEmEntrarSenha();
+        loginFlow.efetuarLogin(username, password);
 
         homePage.clickCreateTask();
 

@@ -10,11 +10,13 @@ public class CreateTaskFlows {
     public CreateTaskFlows(){
         //Page and Steps Objects
         homePage = new HomePage();
+        taskPage = new CreateTaskPage();
     }
 
     //Flows
     public void createTask(String frequency, String gravity, String priority, String username,
     String resume, String description){
+        homePage.clickCreateTask();
         taskPage.selectFrequencyOption(frequency);
         taskPage.selectGravityOption(gravity);
         taskPage.selectPriorityOption(priority);

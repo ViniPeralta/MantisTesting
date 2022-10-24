@@ -29,7 +29,7 @@ public class CreateTaskTest extends TestBase {
         homePage = new HomePage();
         taskPage = new CreateTaskPage();
 
-        //Parameteres
+        //Parameters
         String username = "viniciusperalta";
         String password = "123456";
         String optionFrequency = "sempre";

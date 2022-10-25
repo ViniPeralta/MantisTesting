@@ -44,7 +44,7 @@ public class CreateTaskFilterTest extends TestBase {
         String name = "testePeralta";
 
         //Test
-        loginFlow.efetuarLogin(username, password);
+        loginFlow.login(username, password);
 
         homePage.clickViewTasks();
 

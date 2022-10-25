@@ -12,10 +12,10 @@ public class LoginFlows {
     }
 
     //Flows
-    public void efetuarLogin(String usuario, String senha){
-        loginPage.preenhcerUsuario(usuario);
-        loginPage.clicarEmEntrarUsuario();
-        loginPage.preencherSenha(senha);
-        loginPage.clicarEmEntrarSenha();
+    public void login(String username, String password){
+        loginPage.fillUserName(username);
+        loginPage.clickEnterUsername();
+        loginPage.fillPassword(password);
+        loginPage.clickEnterPassword();
     }
 }

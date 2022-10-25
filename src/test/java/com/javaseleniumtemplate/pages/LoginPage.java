@@ -13,17 +13,17 @@ public class LoginPage extends PageBase {
     By enterPassword = By.xpath("//*[@id=\"login-form\"]/fieldset/input[3]");
 
     //Actions
-    public void preenhcerUsuario(String usuario){
-        sendKeys(usernameField, usuario);
+    public void fillUserName(String username){
+        sendKeys(usernameField, username);
     }
-    public void preencherSenha(String senha){
-        sendKeys(passwordField, senha);
+    public void fillPassword(String password){
+        sendKeys(passwordField, password);
     }
-    public void clicarEmEntrarUsuario() {
+    public void clickEnterUsername() {
         click(enterUsername);
     }
 
-    public void clicarEmEntrarSenha(){
+    public void clickEnterPassword(){
         click(enterPassword);
     }
 }

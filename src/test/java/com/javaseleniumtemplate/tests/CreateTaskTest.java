@@ -4,7 +4,6 @@ import com.javaseleniumtemplate.bases.TestBase;
 import com.javaseleniumtemplate.flows.LoginFlows;
 import com.javaseleniumtemplate.pages.CreateTaskPage;
 import com.javaseleniumtemplate.pages.HomePage;
-import com.javaseleniumtemplate.pages.LoginPage;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -39,7 +38,7 @@ public class CreateTaskTest extends TestBase {
         String description = "Este teste está sendo realizado com base no que foi aprendido nas aulas com a Base2";
 
         //Test
-        loginFlow.efetuarLogin(username, password);
+        loginFlow.login(username, password);
 
         homePage.clickCreateTask();
 

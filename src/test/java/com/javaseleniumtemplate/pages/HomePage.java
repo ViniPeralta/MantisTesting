@@ -8,8 +8,12 @@ public class HomePage extends PageBase {
     //Mapping
     By createTaskButton = By.xpath("//*[@id=\"navbar-container\"]/div[2]/ul/li[1]/div/a");
 
+    By viewTasksButton = By.xpath("//*[@id=\"sidebar\"]/ul/li[2]/a");
+
     //Actions
     public void clickCreateTask () {
         click(createTaskButton);
     }
+
+    public void clickViewTasks () { click(viewTasksButton);}
 }

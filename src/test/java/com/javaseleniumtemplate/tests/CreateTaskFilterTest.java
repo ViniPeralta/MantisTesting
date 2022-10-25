@@ -53,7 +53,7 @@ public class CreateTaskFilterTest extends TestBase {
 
         List<WebElement> filterTableRows = filterPage.findTableRows();
 
-        for(int i = 1; i < filterTableRows.size(); i++){
+        for(int i = 1; i <= filterTableRows.size(); i++){
 
             String filter = filterPage.getFilterName(String.valueOf(i));
 

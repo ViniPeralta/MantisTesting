@@ -2,6 +2,10 @@ package com.javaseleniumtemplate.pages;
 
 import com.javaseleniumtemplate.bases.PageBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
 public class TasksPage extends PageBase {
 
     //Mapping
@@ -19,6 +23,8 @@ public class TasksPage extends PageBase {
     By optionsDropdown = By.xpath("//*[@id=\"filter\"]/div[1]/div[1]/div/a");
 
     By manageOption = By.xpath("//*[@id=\"filter\"]/div[1]/div[1]/div/ul/li[3]/a");
+
+    By tasksRows = By.xpath("//*[@id=\"buglist\"]/tbody/tr");
 
     //Actions
     public void clickOnAttribute(){
@@ -47,4 +53,20 @@ public class TasksPage extends PageBase {
     public void clickOnOptionsDropDown() { click(optionsDropdown) ;}
 
     public void clickOnManageOption() { click(manageOption) ;}
+
+    public List<WebElement> getTasksRows() {
+        return driver.findElements(tasksRows);
+    }
+
+    public String getTaskNum(String row){
+        return driver.findElement(By.xpath("//*[@id=\"buglist\"]/tbody/tr[" + row + "]/td[4]/a")).getText();
+    }
+
+    public void openTaskToBeUpdated(String row){
+        click(By.xpath("//*[@id=\"buglist\"]/tbody/tr[" + row + "]/td[4]/a"));
+    }
+
+    public String getTaskState(String row){
+        return driver.findElement(By.xpath("//*[@id=\"buglist\"]/tbody/tr[" + row + "]/td[9]/div/span")).getText();
+    }
 }

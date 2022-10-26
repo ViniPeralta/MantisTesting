@@ -26,6 +26,7 @@ public class TasksPage extends PageBase {
 
     By tasksRows = By.xpath("//*[@id=\"buglist\"]/tbody/tr");
 
+
     //Actions
     public void clickOnAttribute(){
         click(attributeToButton);

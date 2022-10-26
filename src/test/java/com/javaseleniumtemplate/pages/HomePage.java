@@ -10,10 +10,14 @@ public class HomePage extends PageBase {
 
     By viewTasksButton = By.xpath("//*[@id=\"sidebar\"]/ul/li[2]/a");
 
+    By viewResumeButton = By.xpath("//*[@id=\"sidebar\"]/ul/li[6]/a");
+
     //Actions
-    public void clickCreateTask () {
+    public void clickCreateTask() {
         click(createTaskButton);
     }
 
-    public void clickViewTasks () { click(viewTasksButton);}
+    public void clickViewTasks() { click(viewTasksButton); }
+
+    public void clickViewResume() { click(viewResumeButton); }
 }

@@ -15,12 +15,16 @@ import org.openqa.selenium.WebElement;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class DevStatsTest extends TestBase {
+
+    private static final DecimalFormat df = new DecimalFormat("0.0");
+
     //Objects
     LoginFlows loginFlow;
 
@@ -91,10 +95,10 @@ public class DevStatsTest extends TestBase {
         double totalTasks = devStatsFlow.getTotalTasks(devStatsRows.size());
         double totalTasksByUser = devStatsFlow.getTotalTasksByUser(username, devStatsRows.size());
 
-        String userProportion = String.valueOf((totalTasksByUser / totalTasks) * 100);
+        String userProportion = df.format((totalTasksByUser / totalTasks) * 100);
         String actualUserProportion = devStatsFlow.getUserProportion(username, devStatsRows.size());
 
-        String resolvedProportion = String.valueOf((updatedFinishedTasks / totalTasksByUser) * 100);
+        String resolvedProportion = df.format((updatedFinishedTasks / totalTasksByUser) * 100);
         String actualResolvedProportion = devStatsFlow.getUserResolvedProportion(username, devStatsRows.size());
 
         assertAll(

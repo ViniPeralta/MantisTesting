@@ -16,7 +16,6 @@ public class CreateTaskFlows {
     //Flows
     public void createTask(String frequency, String gravity, String priority, String username,
     String resume, String description){
-        homePage.clickCreateTask();
         taskPage.selectFrequencyOption(frequency);
         taskPage.selectGravityOption(gravity);
         taskPage.selectPriorityOption(priority);
